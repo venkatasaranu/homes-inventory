@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * @author Venkata Saranu
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/homeinventory")
 public class HomeInventoryController {
