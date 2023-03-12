@@ -54,7 +54,7 @@ public class ExcelHelper {
 
 
         // Sets the Read data to the model class
-        inventory.setInventoryId(i);
+        inventory.setInventoryId(i-1);
         inventory.setSaleManager(row.getCell(0) !=null ?row.getCell(0).getStringCellValue():"");
         inventory.setCommunity(row.getCell(1) !=null ?row.getCell(1).getStringCellValue():"");
         inventory.setCity(row.getCell(2) !=null ?row.getCell(2).getStringCellValue():"");

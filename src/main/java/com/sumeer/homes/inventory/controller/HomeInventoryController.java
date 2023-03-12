@@ -5,17 +5,14 @@ import com.sumeer.homes.inventory.model.HomeInventory;
 import com.sumeer.homes.inventory.service.HomeInventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
  * @author Venkata Saranu
  */
-@Controller
+@RestController
 @RequestMapping("/homeinventory")
 public class HomeInventoryController {
     @Autowired

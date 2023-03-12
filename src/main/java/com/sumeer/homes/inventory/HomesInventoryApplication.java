@@ -13,15 +13,15 @@ public class HomesInventoryApplication {
 		SpringApplication.run(HomesInventoryApplication.class, args);
 	}
 
-	@Bean
-	WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/inventory/excel")
-						.allowedOrigins("http://localhost:4200");
-			}
-		};
-	}
+//	@Bean
+//	WebMvcConfigurer corsConfigurer() {
+//		return new WebMvcConfigurer() {
+//			@Override
+//			public void addCorsMappings(CorsRegistry registry) {
+//				registry.addMapping("/inventory/excel")
+//						.allowedOrigins("http://localhost:4200");
+//			}
+//		};
+//	}
 
 }
