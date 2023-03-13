@@ -9,6 +9,7 @@ import jakarta.persistence.*;
 @Table(name="home_inventory")
 public class HomeInventory {
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     @Column(name="inventory_id")
     private Integer inventoryId;
 

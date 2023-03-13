@@ -19,15 +19,33 @@ public class HomeInventoryController {
     @Autowired
     private HomeInventoryService homeInventoryService;
 
-    @PostMapping("/create")
-    public ResponseMessage createHomeInventory(HomeInventory homeInventory) {
+    @PostMapping(value = "/create")
+    public ResponseMessage createHomeInventory(@RequestBody HomeInventory homeInventory) {
         HomeInventory result = homeInventoryService.saveHomeInventory(homeInventory);
         return new ResponseMessage(" Inventory Created with ID : "+result.getInventoryId());
     }
 
+    @PutMapping(value = "/{inventoryId}/update")
+    public ResponseMessage createHomeInventory(@PathVariable("inventoryId") Integer inventoryId , @RequestBody HomeInventory homeInventory) {
+        homeInventory.setInventoryId(inventoryId);
+        HomeInventory result = homeInventoryService.saveHomeInventory(homeInventory);
+        return new ResponseMessage(" Inventory Created with ID : "+result.getInventoryId());
+    }
+
+    @DeleteMapping(value = "/{inventoryId}/delete")
+    public HomeInventory getHomeInventoryList(@PathVariable("inventoryId") Integer inventoryId) {
+        HomeInventory home = homeInventoryService.getHomeInventory(inventoryId);
+        homeInventoryService.deleteHomeInventory(inventoryId);
+        return home;
+    }
     @GetMapping("/list")
     public List<HomeInventory> getHomeInventoryList() {
         return homeInventoryService.getAllInventory();
+    }
+
+    @GetMapping("/{inventoryId}")
+    public HomeInventory getHomeInventoryById(@PathVariable("inventoryId") Integer inventoryId ) {
+        return homeInventoryService.getHomeInventory(inventoryId);
     }
 
 
